@@ -1,0 +1,20 @@
+{
+  "name": "flashcards",
+  "version": "1.0.0",
+  "description": "app for the Express Basics 2 course on Treehouse",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Treehouse",
+    "Node",
+    "NPM",
+    "Express"
+  ],
+  "author": "John Knotts",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
