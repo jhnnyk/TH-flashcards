@@ -4,8 +4,8 @@ const { data } = require('../data/flashcardData.json')
 const { cards } = data
 
 router.get('/', (req, res) => {
-  const randomCard = Math.floor(Math.random() * cards.length)
-  res.redirect(`/cards/${randomCard}?side=question`)
+  const randomCardId = Math.floor(Math.random() * cards.length)
+  res.redirect(`/cards/${randomCardId}?side=question`)
 })
 
 router.get('/:id', (req, res) => {
