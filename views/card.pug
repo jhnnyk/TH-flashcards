@@ -6,3 +6,8 @@ block content
     if hint
       p
         i Hint: #{hint}
+      p
+        a(href=`/cards/${id}?side=answer`) Answer
+    else
+      p
+        a(href=`/cards/${id}?side=question`) Question

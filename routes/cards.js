@@ -9,12 +9,12 @@ router.get('/:id', (req, res) => {
   const text = cards[id][side]
   const { hint } = cards[id]
   
-  const templateData = { text }
+  const templateData = { text, id }
 
   if (side === 'question') {
     templateData.hint = hint
   }
-  
+
   res.render('card', templateData)
 })
 
