@@ -18,6 +18,9 @@ router.get('/:id', (req, res) => {
 
   if (side === 'question') {
     templateData.hint = hint
+  } else if (!side) {
+    templateData.hint = hint
+    templateData.text = cards[id]['question']
   }
 
   res.render('card', templateData)
