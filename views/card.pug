@@ -1,15 +1,35 @@
 extends layout.pug
 
 block content
-  section#content
-    h2= text
+  section.namecard
+    include includes/namecard-hello.pug
+
+  section.flashcards
     if hint
-      p
-        i Hint: #{hint}
-      p
-        a(href=`/cards/${id}?side=answer`) Answer
+      .card.card-question
+        .card-header
+        h1.card-title Question
+        #content
+          h2= text
+          p#hint
+            i Hint: #{hint}
+        .card-flip-wrap
+          a(href=`/cards/${id}?side=answer`)
+            img.card-flip(src='/static/img/flip.svg')
+        .card-next
+          a(href='/cards')
+            img(src='/static/img/next.svg')
     else
-      p
-        a(href=`/cards/${id}?side=question`) Question
-    br
-    a(href='/cards') Next card
+      .card.card-answer
+        .card-header
+        h1.card-title Answer
+        #content
+          h2= text
+        .card-flip-wrap
+          a(href=`/cards/${id}?side=question`)
+            img.card-flip(src='/static/img/flip.svg')
+        .card-next
+          a(href='/cards')
+            img(src='/static/img/next.svg')  
+
+  script(src='/static/js/app.js')
