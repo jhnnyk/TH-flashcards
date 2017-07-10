@@ -19,7 +19,7 @@ router.get('/:id', (req, res) => {
 
   if (side === 'question') {
     templateData.hint = hint
-  } else if (side != 'question' || side != 'answer') {
+  } else if (side != 'question' && side != 'answer') {
     return res.redirect(`/cards/${id}?side=question`)
   }
 
